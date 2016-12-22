@@ -2,19 +2,24 @@
   <main>
     <section>
       <p>The purpose of this is to create a calculator using JS so my wife can calculate the price of changing out our countertop with better materials.</p>
-      <form>
-        Please input your sqaure footage (numbers only): <input id="area" type="number" min="1" max="300"><br />
-        Please choose your material: 
+        <label name="squareFootage">Please input your sqaure footage (numbers only): <input id="area" type="number" min="1" max="300"></label><br />
+      <br />
+        <label name="materials">Please choose your material: 
         <select name="material" id="material">
           <option value="saljan">Saljan</option>
           <option value="karlby">Karlby</option>
           <option value="hammarp">Hammarp</option>
           <option value="ekbacken">Ekbacken</option>
           <option value="barkaboda">Barkaboda</option>
-          </select><br>
-        <input type="submit" value="See how much it'll cost!" id="submitButton" onclick="totalCost()"> <input type="reset">
-      </form>
-      <p id="finalCost"></p>
+          </select>
+        </label><br />
+      <br />
+      <button id="submitButton" onclick="totalCost()">See how much it'll cost!</button>
+      
+      <button id="resetButton" onClick="resetDisplay()">Reset all the things</button>
+      
+      <!-- Output -->
+      <h2 id="displayCost">Your Total: $<span></span></p>
     </section>
   </main>
 </body>
