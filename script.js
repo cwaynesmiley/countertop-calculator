@@ -1,24 +1,35 @@
-var Saljan = 69;
-var Karlby = 129;
-var Hammarp = 149;
-var Ekbacken = 79;
-var Barkaboda = 229;
-
-var totalCost = function(footage, material) {
+function totalCost() {
   var area = document.getElementById("area").value;
   var material = document.getElementById("material").value;
-  var cost = footage * material;
+  var cost = 0;
+
+switch(material) {
+  case "saljan": 
+    cost = 69;
+    break;
+  case "karlby":
+    cost = 139;
+    break;
+  case "hammarp":
+    cost = 119;
+    break;
+  case "ekbacken":
+    cost = 99;
+    break;
+  case "barkaboda":
+    cost = 229;
+    break;
+}
+  
+// Figure out cost
+  var finalCost = area * cost;
+  
+// Append the details 
+  $("h2#displayCost span").html("").append(finalCost);
 }
 
-console.log(totalCost(footage, material));
+// Reset function
 
-//function totalCost(footage, material) {
-//  var cost = (footage * material);  
-//  return cost;
-//}
-
-//$(document).ready(function() {
-//   $("#submitButton").click(function(){
- //    alert("$cost");
- //  });
-//});
+function resetDisplay() {
+  $("h2#displayCost span").html("");
+}
